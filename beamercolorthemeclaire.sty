@@ -1,0 +1,51 @@
+\ProvidesPackageRCS $Header: /cvsroot/latex-beamer/latex-beamer/themes/color/beamercolorthemelaas.sty,v 1.8 2004/10/28 17:15:51 tantau Exp $
+
+% Copyright 2003 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+\mode<presentation>
+
+\definecolor{craneorange}{RGB}{55,105,179}
+\definecolor{craneblue}{RGB}{4,6,76}
+
+%\definecolor{bleu}{RGB}{96,223,228}
+\definecolor{bleu}{RGB}{33,145,227}
+\definecolor{bleu_pale}{RGB}{157,238,234}
+\definecolor{vert}{RGB}{128,195,28}
+\definecolor{vert_pale}{RGB}{188,221,90}
+\definecolor{bleu2}{RGB}{66,97,217}
+\definecolor{bleu2_pale}{RGB}{174,188,241}
+%\definecolor{orange}{RGB}{255,121,0}
+%\definecolor{orange_pale}{RGB}{251,179,107}
+
+\setbeamercolor{structure}{fg=bleu}
+
+\setbeamercolor{palette primary}{fg=vert,bg=vert_pale}
+\setbeamercolor{palette secondary}{fg=bleu,bg=bleu_pale}
+\setbeamercolor{palette tertiary}{fg=bleu2,bg=bleu2_pale}
+\setbeamercolor{palette quaternary}{fg=bleu2,bg=bleu2_pale}
+
+\setbeamercolor{titlelike}{parent=palette quaternary}
+
+\setbeamercolor{block title}{parent=palette quaternary}
+\setbeamercolor{block title alerted}{use=alerted text,fg=vert,bg=alerted text.fg!75!bg}
+\setbeamercolor{block title example}{use=example text,fg=orange,bg=example text.fg!75!bg}
+
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!25!bg}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg!25!bg}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg!25!bg}
+
+\setbeamercolor{sidebar}{parent=palette primary}
+  
+\setbeamercolor{palette sidebar primary}{parent=palette secondary}
+\setbeamercolor{palette sidebar secondary}{parent=palette secondary}
+\setbeamercolor{palette sidebar tertiary}{parent=palette secondary}
+\setbeamercolor{palette sidebar quaternary}{parent=palette secondary}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+\mode
+<all>
