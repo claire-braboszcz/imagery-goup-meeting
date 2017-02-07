@@ -1,0 +1,108 @@
+% Style Beamer Viveris - Adel Daouzli 2017
+% page de garde - V0.1
+
+% Note : doit être inclus après inclusion des couleurs viveris
+
+% Si le package textpos est chargé il doit l'avoir été avec [absolute,overlay]{textpos}
+
+% Si textpos pas chargé
+\makeatletter
+\@ifpackageloaded{textpos}{}{%
+    \usepackage[absolute,overlay]{textpos}
+}
+\makeatother
+
+
+% IMPORTANT : il faut définir TemplatePath avec l'emplacement du dossier contenant
+% le template viveris (dont ce fichier fait partie) avec un séparateur à la fin :
+% dossier donnant accès aux ressources depuis l'emplacement où est compilé le
+% document ou emplacement absolu
+% Sinon il sera défini par défaut avec "./template/"
+\ifdefined\TemplatePath
+\else
+\newcommand*{\TemplatePath}{./template/}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%                     PAGE DE GARDE                    %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%   Arrière plan
+
+\makeatletter
+
+\setbeamertemplate{background canvas}{%
+    \ifnumequal{\c@framenumber}{1}{%
+        % Première page
+        \includegraphics[width=\paperwidth,height=\paperheight]{\TemplatePath page_garde_fond}
+    }{% pas d'arrière plan sur les autres page que numéro 1
+    }%
+}
+
+\makeatother
+
+
+%%%%%%%%%%%%%%   Titres et logo
+
+\setbeamertemplate{title page}
+{
+
+    % Logo Viveris
+
+    \begin{textblock*}{3cm}(9.2cm,0.7cm)
+        \hfill
+        \includegraphics[width=2.3cm]{\TemplatePath logo-viveris} \hspace{2mm}
+    \end{textblock*}
+
+    % Titres
+
+    \begin{textblock*}{3cm}(9.4cm,4.2cm)
+        % Titre de présentation
+        {\textcolor{viveris_violet_4}{\noindent\rule{3cm}{0.1pt}}} % ligne de séparation
+        \vskip1mm
+        \parbox{3cm}{%
+            % Titre
+            \centering
+            {\usebeamercolor[fg]{title} \textbf{\inserttitle}}
+            \par%
+            % Sous-titre
+            {\usebeamercolor[fg]{subtitle} {\insertsubtitle}}
+            \vspace{2.4mm}
+
+            % Auteur
+            \scriptsize
+            \insertauthor \par
+            {\textcolor{viveris_violet_4}{\noindent\rule{3cm}{0.1pt}}} % ligne de séparation
+    %        \vspace{2mm}
+
+            % Date
+            \tiny
+            \insertdate \par
+        } 
+    \end{textblock*}
+}
+
+
+%%%%%%%%%%%%%%   Texte arrière plan
+
+
+\addtobeamertemplate{title page}{}{%
+
+    % Texte arrière plan
+
+    \begin{textblock*}{5cm}(2.8cm,8cm)
+    {\usebeamercolor[fg]{frametitle}
+        \hfill \large \textbf{L'INGÉNIERIE} \par
+        \hfill \footnotesize UN MÉTIER À VIVRE ENSEMBLE
+    }
+    \end{textblock*}
+
+    % Ligne blanche
+
+    \begin{textblock*}{8cm}(0pt,9.1cm)
+        {\textcolor{white}{\noindent\rule{6.6cm}{0.1pt}}}
+    \end{textblock*}
+}
+
+

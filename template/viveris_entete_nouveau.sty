@@ -1,0 +1,45 @@
+% Style Beamer Viveris - Adel Daouzli 2017
+% entete - V0.1
+
+% Note : doit être inclus après inclusion des couleurs viveris
+
+% Si le package textpos est chargé il doit l'avoir été avec [absolute,overlay]{textpos}
+
+% Si textpos pas chargé
+\makeatletter
+\@ifpackageloaded{textpos}{}{%
+    \usepackage[absolute,overlay]{textpos}
+}
+\makeatother
+
+% IMPORTANT : il faut définir TemplatePath avec l'emplacement du dossier contenant
+% le template viveris (dont ce fichier fait partie) avec un séparateur à la fin :
+% dossier donnant accès aux ressources depuis l'emplacement où est compilé le
+% document ou emplacement absolu
+% Sinon il sera défini par défaut avec "./template/"
+\ifdefined\TemplatePath
+\else
+\newcommand*{\TemplatePath}{./template/}%
+\fi
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%                        ENTÊTE                        %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Définit l'aspect du titre des slides
+
+\setbeamertemplate{frametitle}%
+{
+    % Place le numéro de slide et le titre à gauche encadrés de rectangles pleins orange
+    \begin{textblock*}{\textwidth}(0pt,0pt)
+        \scriptsize
+        \colorbox{viveris_header_orange!100}{ \strut \insertpagenumber }
+        \colorbox{viveris_header_orange!100}{ \strut \insertframetitle }
+    \end{textblock*}
+    % Place le logo tout à droite du slide
+    \hfill \includegraphics[width=1.2cm]{\TemplatePath logo-viveris}
+}
+

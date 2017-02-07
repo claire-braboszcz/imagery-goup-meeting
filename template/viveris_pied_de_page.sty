@@ -1,0 +1,51 @@
+% Style Beamer Viveris - Adel Daouzli 2017
+% pied de page - V0.1
+
+% Note : doit être inclus après inclusion des couleurs viveris
+
+% Si le package textpos est chargé il doit l'avoir été avec [absolute,overlay]{textpos}
+
+% Si textpos pas chargé
+\makeatletter
+\@ifpackageloaded{textpos}{}{%
+    \usepackage[absolute,overlay]{textpos}
+}
+
+\@ifpackageloaded{etoolbox}{}{%
+    \usepackage{etoolbox}
+}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%                     PIED DE PAGE                     %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Description du footer
+
+\setbeamercolor{section in head/foot}{fg=white, bg=viveris_text_bleu_2}
+
+\makeatletter
+\setbeamertemplate{footline}
+{
+    \ifnumequal{\c@framenumber}{1}{%
+    }{%
+      \leavevmode%
+      \hbox{%
+      \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+        \usebeamerfont{author in head/foot}\insertshortauthor
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+        \usebeamerfont{title in head/foot}\insertshorttitle
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+        \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+      \end{beamercolorbox}}%
+      \vskip0pt%
+    }%
+}
+\makeatother
+
+
+
