@@ -9,13 +9,7 @@ header-includes:
 
 # Introduction
 
-### State of the art EEG literature on mental imagery
 
-- MVPA approach 
-
-
-
----
 
 
 ## Brain signal decoding and Mental Imagery
@@ -44,7 +38,7 @@ header-includes:
 
 \includegraphics[width=0.8\columnwidth]{images/protocol.png}
 
-
+---
 
 ### Hypothesis
   - effect over parieto-posterior electrodes (attention and visual areas) and
@@ -53,7 +47,7 @@ header-includes:
     electrodes (sensory processing)
 ` - Theta increase over frontal electrodes (working memory)
 
-
+---
 
 
 
