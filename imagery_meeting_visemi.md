@@ -40,6 +40,8 @@ header-includes:
 
 ---
 
+---
+
 ### Hypothesis
   - effect over parieto-posterior electrodes (attention and visual areas) and
     frontal (working memory)
@@ -64,6 +66,7 @@ header-includes:
 
 \end{center}
 
+---
 
 ---
 
